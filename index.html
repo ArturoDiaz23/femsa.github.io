@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--------------------------------------->
+    <!------- css ---------->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style_login.css">
+    <link rel="stylesheet" href="assets/css/myAlert.css">
+
+
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <title>Login</title>
+</head>
+
+<body class="container">
+
+    <div class="container-login">
+        <form action="" class="card">
+            <div class="content_img">
+                <img class="img_login" src="assets/img/femsa_logo.png" alt="FEMSA">
+            </div>
+            <div class="contenido">
+                <div class="input-container">
+                    <input type="text" name="username" id="username" class="input_form" autocomplete="off" />
+                    <label class="label_form" for="username">Usuario</label>
+                </div>
+                <div class="input-container">
+                    <input type="password" name="password" id="password" class="input_form" autocomplete="off" />
+                    <label class="label_form" for="password">Contraseña</label>
+                </div>
+                <button type="submit" id="btn_session" class="btn btn-danger">Iniciar Sesión</button>
+            </div>
+        </form>
+    </div>
+    <script src="assets/js/myAlert.js"></script>
+    <script>
+        document.querySelectorAll(".input_form").forEach((element) => {
+            element.addEventListener("blur", (event) => {
+                if (event.target.value != "") {
+                    event.target.nextElementSibling.classList.add("filled");
+                } else {
+                    event.target.nextElementSibling.classList.remove("filled");
+                }
+            });
+        });
+
+        document.getElementById('btn_session').addEventListener('click', (e) => {
+            e.preventDefault();
+            myAlert(succes, 'Iniciando Sessión...');
+            setTimeout(() => {
+                window.location.href = 'assets/contenido/administrador/pOperativo.php';
+            }, 4000);
+        })
+
+    </script>
+</body>
+
+</html>

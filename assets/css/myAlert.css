@@ -1,0 +1,43 @@
+@import url(root.css);
+.alert{
+	position: relative;
+	bottom: 120px;
+	width: 100%;
+	background: transparent;
+	border: none;
+	
+	/*efect*/
+	transform: translateY(100%);
+	opacity: 0;
+
+	/*centrar modal*/
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.alert{
+	transition: opacity 2s, transform 2s;
+}
+.alert.alertShow{
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.succes_alert{
+	padding: 10px 30px;
+	border-radius: .25rem;
+	font-size: 18px;
+    color: var(--bs-success-text);
+	background-color: var(--bs-success-bg-subtle);
+	border: 1px solid var(--bs-success-border-subtle);
+}
+
+.error_alert{
+	padding: 10px 30px;
+	border-radius: .25rem;
+	font-size: 18px;
+	color: var(--bs-danger-text);
+	background-color: var(--bs-danger-bg-subtle);
+	border: 1px solid var(--bs-danger-border-subtle);
+}
